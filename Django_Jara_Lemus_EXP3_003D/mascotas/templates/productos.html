@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/misestilos.css' %} ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <title>Mypet</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.jpg' %}">
+    <style type="text/css">
+        #container{margin:0 auto;
+                   border:2px ridge;
+                   width:350px;}
+          #text{padding-top:15px;
+                margin:0 auto;}
+           input{margin-left:50px;
+                 width:250px;
+                 font-size:25px;
+                 border:2 px ridge;}
+          table{margin:20px 50px 20px 50px;
+                border:2px ridge;
+                padding:10px;}
+           table td{padding:10px;
+                    border:2px ridge;
+                    width:30px;
+                    height:10px;
+              text-align:center;}
+        </style>
+        <script  type="text/javascript">
+        var result;
+        function command(obj)
+        {
+          result=document.getElementById("result").value;
+          var str=obj.innerHTML;
+          switch(str)
+          {
+          case "del": result=result.substring(0,result.length-1);break;
+          case "c": result="";break;
+          case "=": result=eval(result);break;
+          default: result=result+str;	
+          }
+          document.getElementById("result").value=result;	
+        }
+        </script>
+        <script>
+              function CambiaColor(a)
+            {
+                a.style.background = "pink";
+            }
+    
+        </script>
+</head>
+<body>
+    <!--Creamos las Tarjetas de Articulos-->
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo1.jpeg' %}" alt="Cinque Terre" >
+                    <div class="card-body">
+                        <h3 class="card-title">Puntero laser</h3>
+                        <p class="card-text">
+                            Puntero lazer con pilas de larga duracion, para entrenar a tu gatito.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo2.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Tapete rascador</h3>
+                        <p class="card-text">
+                           Tapete con textura para que su gato no arañe sus muebles.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 well">
+                <div class="card">
+                        <img src="{% static 'img/Articulo3.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                            <h3 class="card-title">Varilla con raton</h3>
+                            <p class="card-text">
+                            Vara con un pequeño ratoncillo relleno de catnip para entretener a su gato.
+                            </p>
+                            <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo4.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Raton cuerda</h3>
+                        <p class="card-text">
+                            Juguete de raton a cuerda para entretener a su gato.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo5.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Arnes para gato</h3>
+                        <p class="card-text">
+                            Arnes para gatitos de diferentes edades y colores.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo6.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Shampoo</h3>
+                        <p class="card-text">
+                            Shampoo en seco con diferentes fragancias para gatitos.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo7.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Juguete para gato</h3>
+                        <p class="card-text">
+                            Pequeño cilindro rascador para entretener a su gatito.
+                        </p> 
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/Articulo8.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Raton de juguete</h3>
+                        <p class="card-text">
+                            Pequeño raton de juguete relleno de catnip para brindarle diversion a tu gatito.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 well">
+                <div class="card">
+                    <img src="{% static 'img/articulo9.jpeg' %}" alt="Cinque Terre" width="558" height="446">
+                    <div class="card-body">
+                        <h3 class="card-title">Raton de Cuerda</h3>
+                        <p class="card-text">
+                            Pequeño raton juguete de cuerda para brindarle diversion a tu gatito.
+                        </p>
+                        <a href="#" class="btn btn-info">Añadir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="container">
+        <h3 class="container-fluid"  onmouseover="style.color = 'grey' " onmouseout="style.color= 'white'" >Usa esta calculadora para cotizar precios!</h3>
+        <div id="text"><input type="text" id="result" size="20" onfocus="CambiaColor(this)"></div>
+        <table cellspacing="6px">
+        <tr>
+        <td id="1" onclick="command(this)">1</td><td id="2" onclick="command(this)">2</td><td onclick="command(this)" id="3">3</td><td onclick="command(this)" id="del">del</td><td onclick="command(this)" id="equiv">=</td>
+        </tr>
+        <tr>
+        <td onclick="command(this)" id="4">4</td><td  onclick="command(this)" id="5">5</td><td onclick="command(this)" id="6">6</td><td onclick="command(this)" id="clear" >c</td><td onclick="command(this)" id="subtract">-</td>
+        </tr>
+        <tr>
+        <td id="7" onclick="command(this)" id="7">7</td><td id="8" onclick="command(this)">8</td><td id="9" onclick="command(this)">9</td><td id="add" onclick="command(this)">+</td><td id="multiply" onclick="command(this)">*</td>
+        </tr>
+        <tr>
+        <td id="0" onclick="command(this)">0</td><td id="point" onclick="command(this)">.</td><td id="00" onclick="command(this)">00</td><td id="remain" onclick="command(this)">%</td><td id="divide" onclick="command(this)">/</td>
+        </tr>
+        </table>
+        </div>
+      
+      </div>
+      </div>
+      <br>
+      <br>
+
+
+      <footer>
+        <div class="social-icons-container">
+            <img src="{% static 'img/facebook.png' %}" class="social-icon" href="">
+            <img src="{% static 'img/instagram.png' %}" class="social-icon" href="">
+            <img src="{% static 'img/twitter.png' %}" class="social-icon" href="">
+        </div>
+        <ul>
+            <li class="footer-menu-item">Legal</li>
+            <li class="footer-menu-item">Cookies</li>
+            <li class="footer-menu-item">Privacy</li>
+        </ul>
+        <span class="copyright">&copy;2023, MyPet, Todos los derechos reservados Matias Lemus, Leonardo Jara</span>
+    </footer>
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
+{% endblock %}

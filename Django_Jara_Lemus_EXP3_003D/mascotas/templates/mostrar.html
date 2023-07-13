@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            {% for producto in mascotitas %}
+            <div class="col-12 col-md-4">
+                <br>
+                <div class="card text-center">
+                    {% if producto.imagen %}
+                        <img src="{{ producto.imagen.url }}" class="card-img-top mx-auto" >
+                    {% else %}
+                        <h2 style="color: red;">No tiene foto</h2>
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">IdProducto: {{producto.idproducto}}</h4>
+                        <p class="card-text">
+                            Nombre: {{ producto.producto }} <br>
+                            Precio: {{ producto.precio }}
+                        </p>
+                        <a href="{% url 'principal' %}" class="btn btn-success">Inicio</a>
+                        <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
